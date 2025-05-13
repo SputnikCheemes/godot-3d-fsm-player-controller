@@ -1,6 +1,5 @@
 extends State
 
-const GRAVITY = 9.8
 var can_jump = true
 
 func enter():
@@ -9,7 +8,7 @@ func enter():
 	can_jump = false
 
 func physics_update(_delta):
-	player.velocity.y -= GRAVITY * _delta
+	player.velocity.y -= player.gravity * _delta
 	
 	# 获取输入方向
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
